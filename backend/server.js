@@ -11,6 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 👉 Import Auth Routes
+const authRoutes = require("./routes/authRoutes");
+
+// 👉 Use Auth Routes
+app.use("/api/auth", authRoutes);
+
 // Basic test route
 app.get("/", (req, res) => {
   res.send("✅ LearnMate Backend Running...");
