@@ -3,20 +3,75 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
   return (
     <Router>
-      <Navbar />
+      {/* Blur background when modal open */}
+      <div className={showLogin || showRegister ? "blur-sm" : ""}>
+        <Navbar
+          openLogin={() => setShowLogin(true)}
+          openRegister={() => setShowRegister(true)}
+        />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home openLogin={() => setShowLogin(true)} />}
+          />
+        </Routes>
 
-      <Footer /> {/* <-- Footer appears on every page */}
+        <Footer />
+      </div>
+
+      {/* LOGIN POPUP */}
+      {showLogin && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="relative">
+            {/* FIX: change text-white → text-black */}
+            <button
+              className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
+              onClick={() => setShowLogin(false)}
+            >
+              ×
+            </button>
+
+            <Login
+              openRegister={() => {
+                setShowLogin(false);
+                setShowRegister(true);
+              }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* REGISTER POPUP */}
+      {showRegister && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="relative">
+            {/* FIX: visible close button */}
+            <button
+              className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
+              onClick={() => setShowRegister(false)}
+            >
+              ×
+            </button>
+
+            <Register
+              openLogin={() => {
+                setShowRegister(false);
+                setShowLogin(true);
+              }}
+            />
+          </div>
+        </div>
+      )}
     </Router>
   );
 }

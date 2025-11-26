@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ openLogin }) {
   return (
     <nav className="bg-[#0C244A] text-white px-8 py-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
@@ -22,12 +22,12 @@ export default function Navbar() {
         </ul>
 
         {/* Login Button */}
-        <Link
-          to="/login"
+        <button
+          onClick={openLogin}
           className="bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-md font-semibold"
         >
           Login
-        </Link>
+        </button>
       </div>
     </nav>
   );

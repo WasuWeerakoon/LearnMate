@@ -1,43 +1,24 @@
-import { Link } from "react-router-dom";
-
-export default function Register() {
+export default function Register({ openLogin }) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-5">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">
-          Register
-        </h1>
+    <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+      <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">
+        Register
+      </h1>
 
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="w-full p-3 border rounded-xl mb-4"
-        />
+      <input type="text" placeholder="Full Name" className="w-full p-3 border rounded-xl mb-4" />
+      <input type="email" placeholder="Email" className="w-full p-3 border rounded-xl mb-4" />
+      <input type="password" placeholder="Password" className="w-full p-3 border rounded-xl mb-4" />
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 border rounded-xl mb-4"
-        />
+      <button className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700">
+        Register
+      </button>
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 border rounded-xl mb-4"
-        />
-
-        <button className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700">
-          Register
+      <p className="mt-4 text-center">
+        Already have an account?
+        <button className="text-blue-600 font-semibold ml-1" onClick={openLogin}>
+          Login
         </button>
-
-        {/* Login Link */}
-        <p className="mt-4 text-center">
-          Already have an account?
-          <Link to="/login" className="text-blue-600 font-semibold ml-1">
-            Login
-          </Link>
-        </p>
-      </div>
+      </p>
     </div>
   );
 }

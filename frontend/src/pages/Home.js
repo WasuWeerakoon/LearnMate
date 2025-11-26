@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Home() {
+export default function Home({ openLogin }) {
   return (
     <div className="bg-white text-[#0C244A]">
 
@@ -19,11 +19,18 @@ export default function Home() {
             </p>
 
             <div className="mt-6 flex gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold">
+              {/* Button triggers login popup */}
+              <button
+                onClick={openLogin}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold"
+              >
                 Explore Courses
               </button>
 
-              <button className="border border-blue-500 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-semibold">
+              <button
+                onClick={openLogin}
+                className="border border-blue-500 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-semibold"
+              >
                 View Tutorials
               </button>
             </div>
