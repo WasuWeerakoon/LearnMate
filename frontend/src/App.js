@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import About from "./pages/About"; // <-- Import About page
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
@@ -24,6 +25,10 @@ function App() {
             path="/"
             element={<Home openLogin={() => setShowLogin(true)} />}
           />
+          <Route
+            path="/about"
+            element={<About />}
+          /> {/* <-- Add About route */}
         </Routes>
 
         <Footer />
@@ -33,7 +38,6 @@ function App() {
       {showLogin && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="relative">
-            {/* FIX: change text-white → text-black */}
             <button
               className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
               onClick={() => setShowLogin(false)}
@@ -55,7 +59,6 @@ function App() {
       {showRegister && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="relative">
-            {/* FIX: visible close button */}
             <button
               className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
               onClick={() => setShowRegister(false)}
