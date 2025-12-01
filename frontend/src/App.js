@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About"; // <-- Import About page
+import About from "./pages/About"; // About page
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
@@ -25,10 +25,7 @@ function App() {
             path="/"
             element={<Home openLogin={() => setShowLogin(true)} />}
           />
-          <Route
-            path="/about"
-            element={<About />}
-          /> {/* <-- Add About route */}
+          <Route path="/about" element={<About />} />
         </Routes>
 
         <Footer />
@@ -37,42 +34,26 @@ function App() {
       {/* LOGIN POPUP */}
       {showLogin && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="relative">
-            <button
-              className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
-              onClick={() => setShowLogin(false)}
-            >
-              ×
-            </button>
-
-            <Login
-              openRegister={() => {
-                setShowLogin(false);
-                setShowRegister(true);
-              }}
-            />
-          </div>
+          <Login
+            onClose={() => setShowLogin(false)} // pass onClose
+            openRegister={() => {
+              setShowLogin(false);
+              setShowRegister(true);
+            }}
+          />
         </div>
       )}
 
       {/* REGISTER POPUP */}
       {showRegister && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="relative">
-            <button
-              className="absolute -top-3 -right-3 bg-white text-black text-2xl font-bold w-8 h-8 rounded-full shadow"
-              onClick={() => setShowRegister(false)}
-            >
-              ×
-            </button>
-
-            <Register
-              openLogin={() => {
-                setShowRegister(false);
-                setShowLogin(true);
-              }}
-            />
-          </div>
+          <Register
+            onClose={() => setShowRegister(false)} // optional, same pattern
+            openLogin={() => {
+              setShowRegister(false);
+              setShowLogin(true);
+            }}
+          />
         </div>
       )}
     </Router>
