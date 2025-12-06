@@ -10,8 +10,8 @@ export default function AboutUs() {
           <h1 className="text-4xl font-bold mb-4">About LearnMate</h1>
           <p className="text-gray-600 text-lg">
             LearnMate is a modern educational platform created to support students 
-            by providing simple, accessible, and high-quality learning resources such 
-            as notes, tutorials, and past papers.
+            by providing simple, accessible, and high-quality learning resources 
+            such as notes, tutorials, and past papers.
           </p>
         </div>
       </section>
@@ -39,20 +39,24 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* MISSION & VISION */}
+      {/* MISSION & VISION SECTION */}
       <section className="py-16 px-8 bg-gray-50">
         <div className="container mx-auto max-w-5xl grid md:grid-cols-2 gap-8">
 
+          {/* MISSION */}
           <div className="bg-white p-8 rounded-xl shadow border">
+            <div className="text-5xl mb-4">🎯</div>
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="text-gray-600 leading-relaxed">
               To simplify education by offering high-quality, easy-to-understand 
-              learning resources that help students score higher and understand 
-              subjects deeply.
+              learning resources that help students score higher and truly understand 
+              their subjects.
             </p>
           </div>
 
+          {/* VISION */}
           <div className="bg-white p-8 rounded-xl shadow border">
+            <div className="text-5xl mb-4">🌟</div>
             <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
             <p className="text-gray-600 leading-relaxed">
               To become the most trusted academic support platform for students 
@@ -66,9 +70,11 @@ export default function AboutUs() {
       {/* WHAT WE OFFER */}
       <section className="py-16 px-8">
         <h2 className="text-3xl font-bold text-center mb-10">What We Offer</h2>
+
         <div className="container mx-auto grid md:grid-cols-3 gap-8">
 
-          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center">
+          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white cursor-pointer">
             <div className="text-4xl mb-3">📘</div>
             <h3 className="text-xl font-semibold mb-2">Well-Organized Notes</h3>
             <p className="text-gray-600">
@@ -76,7 +82,8 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center">
+          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white cursor-pointer">
             <div className="text-4xl mb-3">🎥</div>
             <h3 className="text-xl font-semibold mb-2">Video Tutorials</h3>
             <p className="text-gray-600">
@@ -84,7 +91,8 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center">
+          <div className="bg-gray-50 p-8 rounded-xl shadow border text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white cursor-pointer">
             <div className="text-4xl mb-3">📄</div>
             <h3 className="text-xl font-semibold mb-2">Past Papers</h3>
             <p className="text-gray-600">
@@ -101,17 +109,20 @@ export default function AboutUs() {
 
         <div className="container mx-auto grid md:grid-cols-3 gap-8">
 
-          <div className="p-6 rounded-xl bg-white border shadow text-center">
+          <div className="p-6 rounded-xl bg-white border shadow text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
             <h3 className="text-xl font-semibold mb-2">✔ Quality</h3>
             <p className="text-gray-600">Accurate and reliable learning content.</p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border shadow text-center">
+          <div className="p-6 rounded-xl bg-white border shadow text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
             <h3 className="text-xl font-semibold mb-2">✔ Simplicity</h3>
             <p className="text-gray-600">Easy navigation and user-friendly design.</p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white border shadow text-center">
+          <div className="p-6 rounded-xl bg-white border shadow text-center 
+                          transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
             <h3 className="text-xl font-semibold mb-2">✔ Support</h3>
             <p className="text-gray-600">We help students learn at their own pace.</p>
           </div>
@@ -119,7 +130,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* TEAM SECTION (OPTIONAL) */}
+      {/* TEAM SECTION */}
       <section className="py-16 px-8">
         <h2 className="text-3xl font-bold text-center mb-10">Meet Our Team</h2>
 
@@ -128,7 +139,7 @@ export default function AboutUs() {
           <div className="text-center">
             <img 
               src="/team1.jpg" 
-              className="w-40 h-40 object-cover rounded-full mx-auto shadow"
+              className="w-40 h-40 object-cover rounded-full mx-auto shadow" 
             />
             <h3 className="text-xl font-semibold mt-4">Wasana Weerakon</h3>
             <p className="text-gray-600">Founder / Developer</p>
@@ -137,7 +148,7 @@ export default function AboutUs() {
           <div className="text-center">
             <img 
               src="/team2.jpg" 
-              className="w-40 h-40 object-cover rounded-full mx-auto shadow"
+              className="w-40 h-40 object-cover rounded-full mx-auto shadow" 
             />
             <h3 className="text-xl font-semibold mt-4">Team Member</h3>
             <p className="text-gray-600">UI/UX Designer</p>
@@ -146,7 +157,7 @@ export default function AboutUs() {
           <div className="text-center">
             <img 
               src="/team3.jpg" 
-              className="w-40 h-40 object-cover rounded-full mx-auto shadow"
+              className="w-40 h-40 object-cover rounded-full mx-auto shadow" 
             />
             <h3 className="text-xl font-semibold mt-4">Team Member</h3>
             <p className="text-gray-600">Content Writer</p>
