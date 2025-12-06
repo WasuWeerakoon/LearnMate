@@ -21,7 +21,7 @@ export default function AboutUs() {
         <div className="container mx-auto max-w-5xl grid md:grid-cols-2 gap-10 items-center">
           
           <img 
-            src="/about.jpg" 
+            src="/about.png" 
             alt="About LearnMate" 
             className="rounded-xl w-full shadow-lg"
           />
